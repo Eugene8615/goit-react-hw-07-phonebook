@@ -1,0 +1,13 @@
+.button {
+    margin-left: 5px;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.button:hover {
+    background-color: red;
+}
+
+.item {
+    margin-bottom: 5px;
+}
