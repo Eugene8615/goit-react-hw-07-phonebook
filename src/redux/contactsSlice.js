@@ -36,6 +36,7 @@ export const contactsSlice = createSlice({
     },
 
     // Функціонал додавання контакту
+    
 
     [addContact.fulfilled](state, action) {
       state.contacts.isLoading = false;
@@ -73,3 +74,4 @@ export default contactsSlice.reducer;
 export const getContacts = state => state.contactsState.contacts.item;
 export const getLoading = state => state.contactsState.contacts.isLoading;
 export const getError = state => state.contactsState.contacts.error;
+
