@@ -4,30 +4,32 @@ import { getFilter } from 'redux/filterSlice';
 import  ContactsListItems  from 'components/ContactsListItems/ContactsListItems';
 
 function ContactsList() {
-
-    const contacts = useSelector(getContacts)
+    const contacts = useSelector(getContacts);
     const filterQuery = useSelector(getFilter);
-
+  
     const filteredContact = contacts.filter(contact =>
-        contact.name.toLowerCase().includes(filterQuery.toLowerCase())
+      contact.name.toLowerCase().includes(filterQuery.toLowerCase())
     );
-
+    console.log(contacts)
+  
     return (
-        <ol>
-            {
-            filteredContact.map(({ contactID, name, number }) => {
-                return (
-                    <ContactsListItems
-                    key={contactID}
-                    name={name}
-                    number={number}
-                    contactID={contactID}
-                    />
-                );
-            })}
-        </ol>
+      <ol>
+        {filteredContact.map(contact => {
+          return (
+            <ContactsListItems
+              key={contact.contactID}
+              name={contact.name}
+              number={contact.number}
+              contactID={contact.contactID}
+            />
+          );
+        })}
+      </ol>
     );
-}
+  }
+  
+  export default ContactsList;
 
 
-export default ContactsList;
+
+

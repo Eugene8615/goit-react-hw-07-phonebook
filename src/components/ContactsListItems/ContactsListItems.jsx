@@ -9,7 +9,7 @@ const ContactsListItems = ({ contactID, name, number }) => {
     const handleDeleteContact = () => dispatch(deleteContact(contactID))
 
     return (
-        <li key={contactID} className={styles.item}>
+        <li className={styles.item}>
         {name} <span>{number}</span>
        <button onClick={handleDeleteContact} type='button' className={styles.button}>delete</button>
     </li>
@@ -20,7 +20,9 @@ const ContactsListItems = ({ contactID, name, number }) => {
 export default ContactsListItems
 
 ContactsListItems.propTypes = {
+    item: propTypes.shape({
     name: propTypes.string.isRequired,
     contactID: propTypes.string.isRequired,
     number: propTypes.string.isRequired,
+    }),
   };
