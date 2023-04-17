@@ -10,17 +10,16 @@ function ContactsList() {
     const filteredContact = contacts.filter(contact =>
       contact.name.toLowerCase().includes(filterQuery.toLowerCase())
     );
-    console.log(contacts)
   
     return (
       <ol>
         {filteredContact.map(contact => {
           return (
             <ContactsListItems
-              key={contact.contactID}
+              key={contact.id}
               name={contact.name}
               number={contact.number}
-              contactID={contact.contactID}
+              id={contact.id}
             />
           );
         })}
