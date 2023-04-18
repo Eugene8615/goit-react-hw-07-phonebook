@@ -9,8 +9,8 @@ const ContactsListItems = ({ id, name, number }) => {
     const handleDeleteContact = () => dispatch(deleteContact(id))
 
     return (
-        <li className={styles.item}>
-        {name} <span>{number}</span>
+        <li className={styles.item}>{name} 
+        <span>{number}</span>
        <button onClick={handleDeleteContact} type='button' className={styles.button}>delete</button>
     </li>
     );
